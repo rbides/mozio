@@ -16,3 +16,4 @@ What's missing:
 - Complete unit tests
 - Deploy to AWS
 - Use an autoformatter/linter to enforce PEP8
+- Rate limiter
