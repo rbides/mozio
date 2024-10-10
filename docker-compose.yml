@@ -2,7 +2,6 @@
 services:
   mozio-db:
     image: postgis/postgis:17-3.4
-    # image: postgres
     environment:
       POSTGRES_PASSWORD: "postgres2024"
     ports:
@@ -10,17 +9,17 @@ services:
     networks:
       - mozio-net
     container_name: mozio-db
-  # mozio-run-migrations:
-  #   build:
-  #     context: .
-  #   env_file: .env
-  #   ports:
-  #     - "5433:5433"
-  #   networks:
-  #     - mozio-net
-  #   depends_on: 
-  #     - mozio-db
-  #   command: alembic upgrade head
+  mozio-run-migrations:
+    build:
+      context: .
+    env_file: .env
+    ports:
+      - "5433:5433"
+    networks:
+      - mozio-net
+    depends_on: 
+      - mozio-db
+    command: bash -c "echo 'Waiting db initilization...' && sleep 6 && alembic upgrade head"
   mozio-api:
     build:
       context: .
@@ -32,7 +31,7 @@ services:
     container_name: mozio-api
     depends_on:
       - mozio-db
-      # - mozio-run-migrations
+      - mozio-run-migrations
 networks:
   mozio-net:
     driver: bridge
