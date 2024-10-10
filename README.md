@@ -10,3 +10,9 @@ The api container is configured to run on port 8100, so it'll be accessible on h
 API docs can be accessed in http://localhost:8100/docs and http://localhost:8100/redoc
 
 The file "mozio.postman_collection.json" in the root directory contains requests examples that can imported to Postman for testing the apis.
+
+
+What's missing:
+- Complete unit tests
+- Deploy to AWS
+- Use an autoformatter/linter to enforce PEP8

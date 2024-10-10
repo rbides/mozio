@@ -16,7 +16,7 @@ from shapely import Point, Polygon
 repo = ServiceAreaRepository()
 
 def create_area(area: CreateServiceAreaRequest):
-    id = id = uuid.uuid4()
+    id = uuid.uuid4()
     repo.add(
         ServiceAreaEntity(
             id = id,
