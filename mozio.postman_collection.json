@@ -1,0 +1,206 @@
+{
+	"info": {
+		"_postman_id": "08f059d3-184e-4121-a237-8c283c9d875f",
+		"name": "New Collection",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "10948240"
+	},
+	"item": [
+		{
+			"name": "Health Check",
+			"request": {
+				"method": "GET",
+				"header": []
+			},
+			"response": []
+		},
+		{
+			"name": "Create Provider",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"name\": \"test1\",\n    \"email\": \"email@a.c\",\n    \"phone\": \"+447911123456\",\n    \"language\": \"EN\",\n    \"currency\": \"USD\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8100/providers",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8100",
+					"path": [
+						"providers"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Read Provider",
+			"request": {
+				"method": "GET",
+				"header": []
+			},
+			"response": []
+		},
+		{
+			"name": "Update Provider",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"name\": null,\n    \"email\": \"email@aa.c\",\n    \"phone\": \"+447911123457\",\n    \"language\": \"PT\",\n    \"currency\": \"BRL\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8100/providers/b4640edc-c229-45fc-b3c8-14e69b636144",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8100",
+					"path": [
+						"providers",
+						"b4640edc-c229-45fc-b3c8-14e69b636144"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Delete Provider",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8100/providers/83a1491d-de85-47aa-a2c4-ab8f321bc10d",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8100",
+					"path": [
+						"providers",
+						"83a1491d-de85-47aa-a2c4-ab8f321bc10d"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Create Service Area",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"provider_id\": \"3c607dba-9e4f-4009-9a26-024b4ab8a7ff\",\n    \"name\": \"area2\",\n    \"price\": 0,\n    \"polygon\": [\n        [ -73.9580, 40.8003 ],\n        [ -73.9498, 40.7968 ],\n        [ -73.9737, 40.7648 ],\n        [ -73.9814, 40.7681 ]\n        // [0, 1],\n        // [1, 0],\n        // [0, 0],\n        // [1, 1]\n    ]\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8100/areas",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8100",
+					"path": [
+						"areas"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Read Service Area",
+			"request": {
+				"method": "GET",
+				"header": []
+			},
+			"response": []
+		},
+		{
+			"name": "Update Service Area",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"provider_id\": \"aaf9fa8f-47f7-4be5-9646-a1382f99dc55\",\n    \"name\": \"area2\",\n    \"price\": 123.32\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8100/areas/a2b6e0e1-81cc-4508-8b57-7964ef56e85b",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8100",
+					"path": [
+						"areas",
+						"a2b6e0e1-81cc-4508-8b57-7964ef56e85b"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Delete Service Area",
+			"request": {
+				"method": "DELETE",
+				"header": []
+			},
+			"response": []
+		},
+		{
+			"name": "Get From Point",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8100/areas/point?lat=1.1&lng=2.2",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8100",
+					"path": [
+						"areas",
+						"point"
+					],
+					"query": [
+						{
+							"key": "lat",
+							"value": "1.1"
+						},
+						{
+							"key": "lng",
+							"value": "2.2"
+						}
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
