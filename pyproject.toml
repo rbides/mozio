@@ -1,0 +1,29 @@
+[tool.poetry]
+name = "mozio"
+version = "0.1.0"
+description = ""
+authors = ["rbides <renanbides@gmail.com>"]
+readme = "README.md"
+
+[tool.poetry.dependencies]
+python = "3.10.12"
+fastapi = "^0.115.0"
+uvicorn = "^0.31.0"
+sqlalchemy = "^2.0.35"
+pydantic-settings = "^2.5.2"
+python-dotenv = "^1.0.1"
+alembic = "^1.13.3"
+psycopg2-binary = "^2.9.9"
+pytest = "^8.3.3"
+pydantic = {extras = ["email"], version = "^2.9.2"}
+pydantic-extra-types = "^2.9.0"
+phonenumbers = "^8.13.47"
+shapely = "^2.0.6"
+geopandas = "^1.0.1"
+geojsonio = "^0.0.3"
+geoalchemy2 = "^0.15.2"
+
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"

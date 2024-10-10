@@ -1,0 +1,39 @@
+  
+services:
+  mozio-db:
+    image: postgis/postgis:17-3.4
+    # image: postgres
+    environment:
+      POSTGRES_PASSWORD: "postgres2024"
+    ports:
+      - "5442:5432"
+    networks:
+      - mozio-net
+    container_name: mozio-db
+  # mozio-run-migrations:
+  #   build:
+  #     context: .
+  #   env_file: .env
+  #   ports:
+  #     - "5433:5433"
+  #   networks:
+  #     - mozio-net
+  #   depends_on: 
+  #     - mozio-db
+  #   command: alembic upgrade head
+  mozio-api:
+    build:
+      context: .
+    env_file: .env
+    ports:
+      - "8100:8000"
+    networks:
+      - mozio-net
+    container_name: mozio-api
+    depends_on:
+      - mozio-db
+      # - mozio-run-migrations
+networks:
+  mozio-net:
+    driver: bridge
+    name: mozio-net
